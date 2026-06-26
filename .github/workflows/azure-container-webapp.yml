@@ -1,20 +1,17 @@
-name: Cron Demo
-
-on:
-  schedule:
-    - cron: '*/5 * * * *'   # Every 5 minutes
-
-  workflow_dispatch:        # Allows manual execution
+name: CI-WORKFLOW
+on: workflow_dispatch    
 
 jobs:
-  show-time:
+  build-test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Current Date and Time
-        run: |
-          echo "Workflow Triggered Successfully"
-          echo "Current UTC Time:"
-          date -u
-          echo "Current System Time:"
-          date
+      - name: checkout
+        uses: actions/checkout@v7
+        
+      - name: installing nodejs
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      
