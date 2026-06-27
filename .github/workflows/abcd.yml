@@ -5,15 +5,14 @@ jobs :
   build-test :
     runs-on: ubuntu-22.04
     steps:
-      
-        - name: checkout
+      - name: checkout
         uses: actions/checkout@v7
 
-        - name: build
+      - name: build
         run: npm install
 
-        - name: test
+      - name: test
         run: npm test
         
-        - name: deploy
+      - name: deploy
         run: echo "my code is deployed"
