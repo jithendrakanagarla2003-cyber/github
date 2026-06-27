@@ -1,5 +1,5 @@
 name: workflow810
-on: workflow_dispatch
+on: push
 
 jobs:
   buil-test:
